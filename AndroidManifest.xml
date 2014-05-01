@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.uchi.uchianimals"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logouchi"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.uchi.uchianimals.SplashScreen"
+            android:label="@string/app_name" 
+            android:noHistory="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.uchi.uchianimals.MainActivity"
+            android:label="@string/app_name"
+            android:noHistory="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.uchi.uchianimals.Store"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:noHistory="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.uchi.uchianimals.Inventory"
+            android:label="@string/app_name"
+            android:noHistory="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.uchi.uchianimals.Options"
+            android:label="@string/app_name"
+            android:noHistory="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.uchi.uchianimals.FacebookConnectActivity"
+            android:label="@string/app_name"
+            android:noHistory="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.uchi.uchianimals.StoreDetail"
+            android:label="@string/app_name"
+            android:noHistory="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        
+		<!-- Added by Dennis Paypal shizzle -->
+        <service android:name="com.paypal.android.sdk.payments.PayPalService" android:exported="false"/>
+
+		<activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
+		<activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+		<activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+		<activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+		<activity android:name="com.paypal.android.sdk.payments.PaymentCompletedActivity" />
+		
+		<activity
+		     android:name="io.card.payment.CardIOActivity"
+		     android:configChanges="keyboardHidden|orientation" />
+		<activity android:name="io.card.payment.DataEntryActivity" />
+        
+		<!-- Dennis paypal Ended -->
+        <service android:name="com.uchi.uchianimals.NotificationService" />
+
+        <receiver android:name="com.uchi.uchianimals.AlarmReceiver" >
+        </receiver>
+        
+        <service
+            android:name="MusicService"
+            android:enabled="true" >
+        </service>
+    </application>
+
+</manifest>
